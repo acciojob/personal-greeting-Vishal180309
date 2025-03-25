@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function PersonalizedGreeting() {
-    const [name, setName] = useState('');
-    const greeting = name ? `Hello, ${name}!` : '';
+const PersonalizedGreeting = () => {
+  const [name, setName] = useState("");
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
-    };
-
-    return (
-        <div>
-            <input
-                type="text"
-                value={name}
-                onChange={handleNameChange}
-                placeholder="Enter your name"
-            />
-            <p>{greeting}</p>
-        </div>
-    );
-}
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        style={{ padding: "10px", fontSize: "16px" }}
+      />
+      <h2>{name ? `Hello, ${name}!` : ""}</h2>
+    </div>
+  );
+};
 
 export default PersonalizedGreeting;
