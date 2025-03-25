@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 
 function PersonalizedGreeting() {
     const [name, setName] = useState('');
-    const [greeting, setGreeting] = useState('');
+    const greeting = name ? `Hello, ${name}!` : '';
 
     const handleNameChange = (event) => {
-        const newName = event.target.value;
-        setName(newName);
-        setGreeting(newName ? `Hello, ${newName}!` : '');
+        setName(event.target.value);
     };
 
     return (
